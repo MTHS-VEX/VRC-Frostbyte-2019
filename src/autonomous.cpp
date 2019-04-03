@@ -1,5 +1,13 @@
 #include "main.h"
 
+auto chassis = ChassisControllerFactory::create(
+    {1, 2}, {-3, -4},
+    AbstractMotor::gearset::green,
+    {4.125_in, 10.6_in}
+);
+
+Motor intakeMotor = 5_mtr;
+
 /**
  * Runs the user autonomous code. This function will be started in its own task
  * with the default priority and stack size whenever the robot is enabled via
@@ -11,4 +19,14 @@
  * will be stopped. Re-enabling the robot will restart the task, not re-start it
  * from where it left off.
  */
-void autonomous() {}
+void autonomous() {
+    intakeMotor.moveVoltage(12000);
+    chassis.moveDistance(45_in);
+    pros::Task::delay(500);
+
+    chassis.moveDistance(-8_in);
+    intakeMotor.moveVoltage(0);
+    
+    chassis.turnAngle(90_deg);
+    chassis.moveDistance(40_in);
+}
