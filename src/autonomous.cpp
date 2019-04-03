@@ -12,13 +12,58 @@
  * from where it left off.
  */
 void autonomous() {
-    intakeMotor.moveVoltage(12000);
-    chassis.moveDistance(45_in);
-    pros::Task::delay(500);
+    switch (autoSel)
+    {
+        // Red flag side autonomous
+        case 0:
+            intakeMotor.moveVoltage(12000);
+            chassis.moveDistance(45_in);
+            pros::Task::delay(500);
 
-    chassis.moveDistance(-8_in);
-    intakeMotor.moveVoltage(0);
+            chassis.moveDistance(-8_in);
+            intakeMotor.moveVoltage(0);
 
-    chassis.turnAngle(90_deg);
-    chassis.moveDistance(40_in);
+            chassis.turnAngle(90_deg);
+            chassis.moveDistance(40_in);
+            break;
+
+        // Red post side autonomous
+        case 1:
+            intakeMotor.moveVoltage(12000);
+            chassis.moveDistance(45_in);
+            pros::Task::delay(500);
+
+            chassis.moveDistance(-8_in);
+            intakeMotor.moveVoltage(0);
+
+            chassis.turnAngle(-90_deg);
+            chassis.moveDistance(40_in);
+        
+        // Blue flag side autonomous 
+        case 2:
+            intakeMotor.moveVoltage(12000);
+            chassis.moveDistance(45_in);
+            pros::Task::delay(500);
+
+            chassis.moveDistance(-8_in);
+            intakeMotor.moveVoltage(0);
+
+            chassis.turnAngle(-90_deg);
+            chassis.moveDistance(40_in);
+        
+        // Blue post side autonomous
+        case 3:
+            intakeMotor.moveVoltage(12000);
+            chassis.moveDistance(45_in);
+            pros::Task::delay(500);
+
+            chassis.moveDistance(-8_in);
+            intakeMotor.moveVoltage(0);
+
+            chassis.turnAngle(90_deg);
+            chassis.moveDistance(40_in);
+        
+        default:
+            break;
+    }
 }

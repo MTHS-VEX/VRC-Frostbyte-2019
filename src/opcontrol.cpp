@@ -28,8 +28,6 @@ ControllerButton ButtonRIGHT(ControllerDigital::right);
  * task, not resume it from where it left off.
  */
 void opcontrol() {
-    Controller controller;
-
     while (true) {
         // Tank control for chasssis
         chassis.tank(

@@ -1,6 +1,12 @@
 #include "main.h"
 
-void on_center_button() {}
+void on_center_button() {
+    autoSel++;
+    if (!autoSel<=3) {
+        autoSel = 0;
+    }
+    controller.setText(2, 0, autoList[autoSel]);
+}
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
