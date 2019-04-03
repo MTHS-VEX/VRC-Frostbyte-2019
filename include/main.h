@@ -54,6 +54,8 @@
 // using namespace pros::literals;
 using namespace okapi;
 
+#include "definitions.h"
+
 /**
  * Prototypes for the competition control tasks are redefined here to ensure
  * that they can be called from user code (i.e. calling autonomous from a
