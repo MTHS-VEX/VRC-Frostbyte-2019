@@ -10,6 +10,7 @@ inline std::string autoList [4] = {
     "Blue Post Side"
 };
 inline int autoSel = 0;
+inline bool autoRun = false;
 
 // Controller definition
 inline Controller controller;

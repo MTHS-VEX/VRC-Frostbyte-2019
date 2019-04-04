@@ -12,6 +12,11 @@
  * from where it left off.
  */
 void autonomous() {
+    controller.clear();
+    controller.setText(0, 0, "Running Auto");
+    controller.setText(1, 0, autoList[autoSel]);
+    autoRun = true;
+
     switch (autoSel)
     {
         // Red flag side autonomous
@@ -66,4 +71,7 @@ void autonomous() {
         default:
             break;
     }
+
+    controller.clear();
+    controller.setText(1, 0, "Auto Complete");
 }

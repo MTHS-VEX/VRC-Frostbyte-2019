@@ -1,11 +1,14 @@
 #include "main.h"
 
 void on_center_button() {
-    autoSel++;
-    if (!autoSel<=3) {
-        autoSel = 0;
+    if (!autoRun) {
+        autoSel++;
+        if (autoSel>3) {
+            autoSel = 0;
+        }
+        controller.clear();
+        controller.setText(1, 0, autoList[autoSel]);
     }
-    controller.setText(2, 0, autoList[autoSel]);
 }
 
 /**
@@ -21,7 +24,10 @@ void initialize() {}
  * the VEX Competition Switch, following either autonomous or opcontrol. When
  * the robot is enabled, this task will exit.
  */
-void disabled() {}
+void disabled() {
+    controller.clear();
+    controller.setText(1, 0, "Robot disabled");
+}
 
 /**
  * Runs after initialize(), and before autonomous when connected to the Field
