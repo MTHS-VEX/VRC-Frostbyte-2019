@@ -12,8 +12,22 @@ inline std::string autoList [4] = {
 inline int autoSel = 0;
 inline bool autoRun = false;
 
-// Controller definition
+// Controller declaration
 inline Controller controller;
+
+// Controller button declarations
+inline ControllerButton ButtonL1(ControllerDigital::L1);
+inline ControllerButton ButtonL2(ControllerDigital::L2);
+inline ControllerButton ButtonR1(ControllerDigital::R1);
+inline ControllerButton ButtonR2(ControllerDigital::R2);
+inline ControllerButton ButtonA(ControllerDigital::A);
+inline ControllerButton ButtonB(ControllerDigital::B);
+inline ControllerButton ButtonX(ControllerDigital::X);
+inline ControllerButton ButtonY(ControllerDigital::Y);
+inline ControllerButton ButtonUP(ControllerDigital::up);
+inline ControllerButton ButtonDOWN(ControllerDigital::down);
+inline ControllerButton ButtonLEFT(ControllerDigital::left);
+inline ControllerButton ButtonRIGHT(ControllerDigital::right);
 
 // Chassis motor declarations
 const int DRIVE_MOTOR_LEFT_1 = 1; //1, 2 = Front, Middle & Back

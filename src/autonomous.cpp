@@ -1,6 +1,18 @@
 #include "main.h"
 
 /**
+ * Turns robot left or right. This function is used in order to automatically
+ * flip the autonomous depending on if the robot is on either the blue or red
+ * side, without having to manually recode it.
+ */
+void autoTurn(float x) {
+    if (autoSel >= 2) {
+        x = -x;
+    }
+    chassis.turnAngle(x);
+}
+
+/**
  * Runs the user autonomous code. This function will be started in its own task
  * with the default priority and stack size whenever the robot is enabled via
  * the Field Management System or the VEX Competition Switch in the autonomous
@@ -13,65 +25,34 @@
  */
 void autonomous() {
     controller.clear();
-    controller.setText(0, 0, "Running Auto");
+    controller.setText(0, 0, "Running Auton");
     controller.setText(1, 0, autoList[autoSel]);
     autoRun = true;
 
-    switch (autoSel)
-    {
-        // Red flag side autonomous
-        case 0:
-            intakeMotor.moveVoltage(12000);
-            chassis.moveDistance(45_in);
-            pros::Task::delay(500);
+    if (autoSel == 0 || autoSel == 2) {
+        intakeMotor.moveVoltage(12000);
+        chassis.moveDistance(45_in);
+        pros::Task::delay(500);
 
-            chassis.moveDistance(-8_in);
-            intakeMotor.moveVoltage(0);
+        chassis.moveDistance(-8_in);
+        intakeMotor.moveVoltage(0);
 
-            chassis.turnAngle(90_deg);
-            chassis.moveDistance(40_in);
-            break;
+        autoTurn(90);
+        chassis.moveDistance(40_in);
+    }
 
-        // Red post side autonomous
-        case 1:
-            intakeMotor.moveVoltage(12000);
-            chassis.moveDistance(45_in);
-            pros::Task::delay(500);
+    if (autoSel == 1 || autoSel == 3) {
+        intakeMotor.moveVoltage(12000);
+        chassis.moveDistance(45_in);
+        pros::Task::delay(500);
 
-            chassis.moveDistance(-8_in);
-            intakeMotor.moveVoltage(0);
+        chassis.moveDistance(-8_in);
+        intakeMotor.moveVoltage(0);
 
-            chassis.turnAngle(-90_deg);
-            chassis.moveDistance(40_in);
-        
-        // Blue flag side autonomous 
-        case 2:
-            intakeMotor.moveVoltage(12000);
-            chassis.moveDistance(45_in);
-            pros::Task::delay(500);
-
-            chassis.moveDistance(-8_in);
-            intakeMotor.moveVoltage(0);
-
-            chassis.turnAngle(-90_deg);
-            chassis.moveDistance(40_in);
-        
-        // Blue post side autonomous
-        case 3:
-            intakeMotor.moveVoltage(12000);
-            chassis.moveDistance(45_in);
-            pros::Task::delay(500);
-
-            chassis.moveDistance(-8_in);
-            intakeMotor.moveVoltage(0);
-
-            chassis.turnAngle(90_deg);
-            chassis.moveDistance(40_in);
-        
-        default:
-            break;
+        autoTurn(-90);
+        chassis.moveDistance(40_in);
     }
 
     controller.clear();
-    controller.setText(1, 0, "Auto Complete");
+    controller.setText(1, 0, "Auton Complete");
 }

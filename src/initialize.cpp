@@ -1,15 +1,6 @@
 #include "main.h"
 
-void on_center_button() {
-    if (!autoRun) {
-        autoSel++;
-        if (autoSel>3) {
-            autoSel = 0;
-        }
-        controller.clear();
-        controller.setText(1, 0, autoList[autoSel]);
-    }
-}
+void on_center_button() {}
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
@@ -26,7 +17,7 @@ void initialize() {}
  */
 void disabled() {
     controller.clear();
-    controller.setText(1, 0, "Robot disabled");
+    controller.setText(1, 0, "Robot Disabled");
 }
 
 /**
@@ -38,4 +29,32 @@ void disabled() {
  * This task will exit when the robot is enabled and autonomous or opcontrol
  * starts.
  */
-void competition_initialize() {}
+void competition_initialize() {
+    controller.clear();
+    controller.setText(0, 0, "Select Auton");
+    controller.setText(2, 0, "A to Confirm");
+
+    // Autonomous selector
+    while (!ButtonA.changedToPressed) { // A = Confirm Button
+        if (ButtonRIGHT.changedToPressed()) {
+            autoSel++;
+            if (autoSel>3) {
+                autoSel = 0;
+            }
+            controller.clearLine(2);
+            controller.setText(1, 0, autoList[autoSel]);
+        }
+        else if (ButtonLEFT.changedToPressed()) {
+            autoSel--;
+            if (autoSel<0) {
+                autoSel = 3;
+            }
+            controller.clearLine(2);
+            controller.setText(1, 0, autoList[autoSel]);
+        }
+    }
+
+    controller.clear();
+    controller.setText(0, 0, "Auton Selected");
+    controller.setText(1, 0, autoList[autoSel]);
+}

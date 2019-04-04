@@ -1,19 +1,5 @@
 #include "main.h"
 
-// Improved controller button names
-ControllerButton ButtonL1(ControllerDigital::L1);
-ControllerButton ButtonL2(ControllerDigital::L2);
-ControllerButton ButtonR1(ControllerDigital::R1);
-ControllerButton ButtonR2(ControllerDigital::R2);
-ControllerButton ButtonA(ControllerDigital::A);
-ControllerButton ButtonB(ControllerDigital::B);
-ControllerButton ButtonX(ControllerDigital::X);
-ControllerButton ButtonY(ControllerDigital::Y);
-ControllerButton ButtonUP(ControllerDigital::up);
-ControllerButton ButtonDOWN(ControllerDigital::down);
-ControllerButton ButtonLEFT(ControllerDigital::left);
-ControllerButton ButtonRIGHT(ControllerDigital::right);
-
 /**
  * Runs the operator control code. This function will be started in its own task
  * with the default priority and stack size whenever the robot is enabled via
