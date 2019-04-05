@@ -9,7 +9,7 @@ void autoTurn(float x) {
     if (autoSel >= 2) {
         x = -x;
     }
-    chassis.turnAngle(x);
+    dt.turnAngle(x);
 }
 
 /**
@@ -24,35 +24,34 @@ void autoTurn(float x) {
  * from where it left off.
  */
 void autonomous() {
-    controller.clear();
-    controller.setText(0, 0, "Running Auton");
-    controller.setText(1, 0, autoList[autoSel]);
-    autoRun = true;
+    master.clear();
+    master.setText(0, 0, "Running Auton");
+    master.setText(1, 0, autoList[autoSel]);
 
     if (autoSel == 0 || autoSel == 2) {
-        intakeMotor.moveVoltage(12000);
-        chassis.moveDistance(45_in);
+        intake.moveVoltage(12000);
+        dt.moveDistance(45_in);
         pros::Task::delay(500);
 
-        chassis.moveDistance(-8_in);
-        intakeMotor.moveVoltage(0);
+        dt.moveDistance(-8_in);
+        intake.moveVoltage(0);
 
         autoTurn(90);
-        chassis.moveDistance(40_in);
+        dt.moveDistance(40_in);
     }
 
     if (autoSel == 1 || autoSel == 3) {
-        intakeMotor.moveVoltage(12000);
-        chassis.moveDistance(45_in);
+        intake.moveVoltage(12000);
+        dt.moveDistance(45_in);
         pros::Task::delay(500);
 
-        chassis.moveDistance(-8_in);
-        intakeMotor.moveVoltage(0);
+        dt.moveDistance(-8_in);
+        intake.moveVoltage(0);
 
         autoTurn(-90);
-        chassis.moveDistance(40_in);
+        dt.moveDistance(40_in);
     }
 
-    controller.clear();
-    controller.setText(1, 0, "Auton Complete");
+    master.clear();
+    master.setText(1, 0, "Auton Complete");
 }

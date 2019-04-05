@@ -16,8 +16,8 @@ void initialize() {}
  * the robot is enabled, this task will exit.
  */
 void disabled() {
-    controller.clear();
-    controller.setText(1, 0, "Robot Disabled");
+    master.clear();
+    master.setText(1, 0, "Robot Disabled");
 }
 
 /**
@@ -30,31 +30,31 @@ void disabled() {
  * starts.
  */
 void competition_initialize() {
-    controller.clear();
-    controller.setText(0, 0, "Select Auton");
-    controller.setText(2, 0, "A to Confirm");
+    master.clear();
+    master.setText(0, 0, "Select Auton");
+    master.setText(2, 0, "A to Confirm");
 
     // Autonomous selector
-    while (!ButtonA.changedToPressed) { // A = Confirm Button
+    while (!ButtonA.changedToPressed()) { // A = Confirm Button
         if (ButtonRIGHT.changedToPressed()) {
             autoSel++;
             if (autoSel>3) {
                 autoSel = 0;
             }
-            controller.clearLine(2);
-            controller.setText(1, 0, autoList[autoSel]);
+            master.clearLine(2);
+            master.setText(1, 0, autoList[autoSel]);
         }
         else if (ButtonLEFT.changedToPressed()) {
             autoSel--;
             if (autoSel<0) {
                 autoSel = 3;
             }
-            controller.clearLine(2);
-            controller.setText(1, 0, autoList[autoSel]);
+            master.clearLine(2);
+            master.setText(1, 0, autoList[autoSel]);
         }
     }
 
-    controller.clear();
-    controller.setText(0, 0, "Auton Selected");
-    controller.setText(1, 0, autoList[autoSel]);
+    master.clear();
+    master.setText(0, 0, "Auton Selected");
+    master.setText(1, 0, autoList[autoSel]);
 }

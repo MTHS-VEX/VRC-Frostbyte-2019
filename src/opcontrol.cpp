@@ -15,29 +15,29 @@
  */
 void opcontrol() {
     while (true) {
-        // Tank control for chasssis
-        chassis.tank(
-            controller.getAnalog(ControllerAnalog::leftY),
-            controller.getAnalog(ControllerAnalog::rightY)
+        // Tank control for drivetrain
+        dt.tank(
+            master.getAnalog(ControllerAnalog::leftY),
+            master.getAnalog(ControllerAnalog::rightY)
         );
 
         // Intake control
         if (ButtonL1.isPressed()) {
-            intakeMotor.moveVoltage(12000);
+            intake.moveVoltage(12000);
         }
         else if (ButtonL2.isPressed()) {
-            intakeMotor.moveVoltage(-12000);
+            intake.moveVoltage(-12000);
         }
         else {
-            intakeMotor.moveVoltage(0);
+            intake.moveVoltage(0);
         }
 
         // Shooter control
         if (ButtonR2.isPressed()) {
-            shooterMotor.moveVoltage(12000);
+            shooter.moveVoltage(12000);
         }
         else {
-            shooterMotor.moveVoltage(0);
+            shooter.moveVoltage(0);
         }
 
         pros::Task::delay(10);

@@ -40,6 +40,8 @@
  * You should add more #includes here
  */
 #include "okapi/api.hpp"
+#include "robot.h"
+
 //#include "pros/api_legacy.h"
 
 /**
@@ -54,7 +56,6 @@
 // using namespace pros::literals;
 using namespace okapi;
 
-#include "definitions.h"
 
 /**
  * Prototypes for the competition control tasks are redefined here to ensure
