@@ -37,6 +37,9 @@ extern Motor intake;
 extern Motor shooter;
 
 // Drivetrain controller declaration
+extern QLength wheelDiameter;
+extern QLength chassisWidth;
+
 extern ChassisControllerIntegrated dt;
 
 #endif

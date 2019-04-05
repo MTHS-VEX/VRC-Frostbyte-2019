@@ -38,9 +38,12 @@ Motor intake = 5_mtr;
 Motor shooter(6, false, AbstractMotor::gearset::red);
 
 // Drivetrain controller definition
+QLength wheelDiameter = 4.125_in;
+QLength chassisWidth = 10.6_in;
+
 ChassisControllerIntegrated dt = ChassisControllerFactory::create(
     {leftFront, leftBack},
     {rightFront, rightBack},
     AbstractMotor::gearset::green,
-    {4.125_in, 10.6_in}
+    {wheelDiameter, chassisWidth}
 );
