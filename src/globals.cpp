@@ -35,7 +35,7 @@ Motor rightBack = 4_rmtr;
 
 // Intake & shooter definitions
 Motor intake = 5_mtr;
-Motor shooter(6, false, AbstractMotor::gearset::red);
+Motor shooter = 6_mtr; // Gearset defined in initialize
 
 // Drivetrain controller definition
 QLength wheelDiameter = 4.125_in;

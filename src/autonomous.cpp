@@ -5,7 +5,7 @@
  * flip the autonomous depending on if the robot is on either the blue or red
  * side, without having to manually recode it.
  */
-void autoTurn(float x) {
+void autoTurn(QAngle x) {
     if (autoSel >= 2) {
         x = -x;
     }
@@ -36,7 +36,7 @@ void autonomous() {
         dt.moveDistance(-8_in);
         intake.moveVoltage(0);
 
-        autoTurn(90);
+        autoTurn(90_deg);
         dt.moveDistance(40_in);
     }
 
@@ -48,7 +48,7 @@ void autonomous() {
         dt.moveDistance(-8_in);
         intake.moveVoltage(0);
 
-        autoTurn(-90);
+        autoTurn(-90_deg);
         dt.moveDistance(40_in);
     }
 

@@ -8,7 +8,9 @@ void on_center_button() {}
  * All other competition modes are blocked by initialize; it is recommended
  * to keep execution time for this mode under a few seconds.
  */
-void initialize() {}
+void initialize() {
+    shooter.setGearing(AbstractMotor::gearset::red);
+}
 
 /**
  * Runs while the robot is in the disabled state of Field Management System or
@@ -41,7 +43,7 @@ void competition_initialize() {
             if (autoSel>3) {
                 autoSel = 0;
             }
-            master.clearLine(2);
+            master.clearLine(1);
             master.setText(1, 0, autoList[autoSel]);
         }
         else if (ButtonLEFT.changedToPressed()) {
@@ -49,7 +51,7 @@ void competition_initialize() {
             if (autoSel<0) {
                 autoSel = 3;
             }
-            master.clearLine(2);
+            master.clearLine(1);
             master.setText(1, 0, autoList[autoSel]);
         }
     }
