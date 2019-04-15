@@ -2,7 +2,16 @@
 #define ROBOT_H
 
 #include "okapi/api.hpp"
-using namespace okapi;
+
+// Chassis motor ports
+const int LEFT_MOTOR_FRONT = 1;
+const int LEFT_MOTOR_BACK = 2;
+const int RIGHT_MOTOR_FRONT = 3;
+const int RIGHT_MOTOR_BACK = 4;
+
+// Intake & shooter motor ports
+const int INTAKE_MOTOR = 5;
+const int SHOOTER_MOTOR = 6;
 
 // Controller declarations
 extern Controller master;
@@ -27,10 +36,10 @@ extern ControllerButton ButtonLEFT;
 extern ControllerButton ButtonRIGHT;
 
 // Drivetrain motor declarations
-extern Motor leftFront;
-extern Motor leftBack;
-extern Motor rightFront;
-extern Motor rightBack;
+extern Motor dtLeftFront;
+extern Motor dtLeftBack;
+extern Motor dtRightFront;
+extern Motor dtRIghtBack;
 
 // Intake & shooter declarations
 extern Motor intake;

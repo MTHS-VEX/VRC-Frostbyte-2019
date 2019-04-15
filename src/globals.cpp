@@ -28,22 +28,22 @@ ControllerButton ButtonLEFT(ControllerDigital::left);
 ControllerButton ButtonRIGHT(ControllerDigital::right);
 
 // Drivetrain motor definitions
-Motor leftFront = 1_mtr;
-Motor leftBack = 2_mtr;
-Motor rightFront = 3_rmtr;
-Motor rightBack = 4_rmtr;
+Motor dtLeftFront(LEFT_MOTOR_FRONT, false, AbstractMotor::gearset::green);
+Motor dtLeftBack(LEFT_MOTOR_BACK, false, AbstractMotor::gearset::green);
+Motor dtRightFront(RIGHT_MOTOR_FRONT, true, AbstractMotor::gearset::green);
+Motor dtRightBack(RIGHT_MOTOR_BACK, true, AbstractMotor::gearset::green);
 
 // Intake & shooter definitions
-Motor intake = 5_mtr;
-Motor shooter = 6_mtr; // Gearset defined in initialize
+Motor intake(5, false, AbstractMotor::gearset::green);
+Motor shooter(6, false, AbstractMotor::gearset::red);
 
 // Drivetrain controller definition
 QLength wheelDiameter = 4.125_in;
 QLength chassisWidth = 10.6_in;
 
 ChassisControllerIntegrated dt = ChassisControllerFactory::create(
-    {leftFront, leftBack},
-    {rightFront, rightBack},
+    {dtLeftFront, dtLeftBack},
+    {dtRightFront, dtRightBack},
     AbstractMotor::gearset::green,
     {wheelDiameter, chassisWidth}
 );

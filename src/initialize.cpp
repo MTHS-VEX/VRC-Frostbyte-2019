@@ -9,7 +9,6 @@ void on_center_button() {}
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-    shooter.setGearing(AbstractMotor::gearset::red);
 }
 
 /**
@@ -31,7 +30,7 @@ void disabled() {
  * This task will exit when the robot is enabled and autonomous or opcontrol
  * starts.
  */
-void competition_initialize() {
+void competition_initialize() {/*
     master.clear();
     master.setText(0, 0, "Select Auton");
     master.setText(2, 0, "A to Confirm");
@@ -58,5 +57,5 @@ void competition_initialize() {
 
     master.clear();
     master.setText(0, 0, "Auton Selected");
-    master.setText(1, 0, autoList[autoSel]);
+    master.setText(1, 0, autoList[autoSel]);*/
 }
