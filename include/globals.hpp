@@ -1,5 +1,5 @@
-#ifndef ROBOT_H
-#define ROBOT_H
+#ifndef GLOBALS_HPP
+#define GLOBALS_HPP
 
 #include "okapi/api.hpp"
 
