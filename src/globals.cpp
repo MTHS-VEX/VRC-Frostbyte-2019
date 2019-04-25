@@ -1,4 +1,4 @@
-#include "main.h"
+#include "globals.hpp"
 
 // Controller definitions
 Controller master = ControllerId::master;

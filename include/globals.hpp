@@ -1,7 +1,7 @@
 #ifndef GLOBALS_HPP
 #define GLOBALS_HPP
 
-#include "okapi/api.hpp"
+#include "main.h"
 
 // Chassis motor ports
 const int LEFT_MOTOR_FRONT = 1;

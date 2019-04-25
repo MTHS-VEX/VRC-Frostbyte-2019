@@ -1,4 +1,4 @@
-#include "main.h"
+#include "globals.hpp"
 
 /**
  * Turns robot left or right. This function is used in order to automatically
