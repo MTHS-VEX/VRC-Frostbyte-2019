@@ -4,15 +4,6 @@
 Controller master = ControllerId::master;
 Controller partner = ControllerId::partner;
 
-// Autonomous selector definitions
-std::string autoList [4] = {
-    "Red Flag Side",
-    "Red Post Side",
-    "Blue Flag Side",
-    "Blue Post Side"
-};
-int autoSel = 0;
-
 // Controller button definitions
 ControllerButton ButtonL1(ControllerDigital::L1);
 ControllerButton ButtonL2(ControllerDigital::L2);

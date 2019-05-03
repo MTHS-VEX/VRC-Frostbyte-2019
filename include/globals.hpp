@@ -17,10 +17,6 @@ const int SHOOTER_MOTOR = 6;
 extern Controller master;
 extern Controller partner;
 
-// Autonomous selector declarations
-extern std::string autoList [4];
-extern int autoSel;
-
 // Controller button declarations
 extern ControllerButton ButtonL1;
 extern ControllerButton ButtonL2;
