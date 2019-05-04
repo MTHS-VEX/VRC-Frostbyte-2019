@@ -6,9 +6,9 @@
  * side, without having to manually recode it.
  */
 void autoTurn(QAngle x) {
-    if (autoSel >= 2) {
+    // if (autoSel >= 2) {
         x = -x;
-    }
+    // }
     dt.turnAngle(x);
 }
 
@@ -24,11 +24,7 @@ void autoTurn(QAngle x) {
  * from where it left off.
  */
 void autonomous() {
-    master.clear();
-    master.setText(0, 0, "Running Auton");
-    master.setText(1, 0, autoList[autoSel]);
-
-    if (autoSel == 0 || autoSel == 2) {
+    // if (autoSel == 0 || autoSel == 2) {
         intake.moveVoltage(12000);
         dt.moveDistance(45_in);
         pros::Task::delay(500);
@@ -38,9 +34,9 @@ void autonomous() {
 
         autoTurn(90_deg);
         dt.moveDistance(40_in);
-    }
+    // }
 
-    if (autoSel == 1 || autoSel == 3) {
+    // if (autoSel == 1 || autoSel == 3) {
         intake.moveVoltage(12000);
         dt.moveDistance(45_in);
         pros::Task::delay(500);
@@ -50,8 +46,5 @@ void autonomous() {
 
         autoTurn(-90_deg);
         dt.moveDistance(40_in);
-    }
-
-    master.clear();
-    master.setText(1, 0, "Auton Complete");
+    // }
 }
