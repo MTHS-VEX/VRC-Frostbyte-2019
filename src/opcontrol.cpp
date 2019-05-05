@@ -39,7 +39,7 @@ void opcontrol() {
         else {
             shooter.moveVoltage(0);
         }
-
+        std::cout << side << std::endl;
         pros::Task::delay(10);
     }
 }

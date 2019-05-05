@@ -3,6 +3,8 @@
 
 #include "main.h"
 
+extern int side;
+
 // Chassis motor ports
 const int LEFT_MOTOR_FRONT = 1;
 const int LEFT_MOTOR_BACK = 2;

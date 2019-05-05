@@ -1,5 +1,7 @@
 #include "globals.hpp"
 
+int side = 0;
+
 // Controller definitions
 Controller master = ControllerId::master;
 Controller partner = ControllerId::partner;
