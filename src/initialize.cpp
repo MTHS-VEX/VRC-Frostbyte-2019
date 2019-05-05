@@ -17,9 +17,7 @@ static const char *autonSide[] = {"Red", "Blue"};
 static lv_res_t btn_click_action(lv_obj_t * btn) {
 	uint8_t id = lv_obj_get_free_num(btn);
 	char labelMsg[100];
-	char controllerMsg[100];
 	sprintf(labelMsg, "%s Side Selected", autonSide[id]);
-	sprintf(controllerMsg, "%s Side", autonSide[id]);
 	lv_label_set_text(autonLabel, labelMsg);
 	side = id;
 
