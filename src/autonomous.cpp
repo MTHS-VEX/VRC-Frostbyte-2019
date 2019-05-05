@@ -6,9 +6,9 @@
  * side, without having to manually recode it.
  */
 void autoTurn(QAngle x) {
-    // if (autoSel >= 2) {
+    if (side == 1) {
         x = -x;
-    // }
+    }
     dt.turnAngle(x);
 }
 
@@ -24,27 +24,13 @@ void autoTurn(QAngle x) {
  * from where it left off.
  */
 void autonomous() {
-    // if (autoSel == 0 || autoSel == 2) {
-        intake.moveVoltage(12000);
-        dt.moveDistance(45_in);
-        pros::Task::delay(500);
+    intake.moveVoltage(12000);
+    dt.moveDistance(45_in);
+    pros::Task::delay(500);
 
-        dt.moveDistance(-8_in);
-        intake.moveVoltage(0);
+    dt.moveDistance(-8_in);
+    intake.moveVoltage(0);
 
-        autoTurn(90_deg);
-        dt.moveDistance(40_in);
-    // }
-
-    // if (autoSel == 1 || autoSel == 3) {
-        intake.moveVoltage(12000);
-        dt.moveDistance(45_in);
-        pros::Task::delay(500);
-
-        dt.moveDistance(-8_in);
-        intake.moveVoltage(0);
-
-        autoTurn(-90_deg);
-        dt.moveDistance(40_in);
-    // }
+    autoTurn(90_deg);
+    dt.moveDistance(40_in);
 }
