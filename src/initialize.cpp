@@ -128,50 +128,6 @@ void initialize() {
 		skillsButton
 	);
 
-	/*
-	lv_style_copy(&redButtonStyleREL, &lv_style_plain);
-	redButtonStyleREL.body.radius = 10;
-	redButtonStyleREL.text.color = LV_COLOR_RED;
-
-	lv_style_copy(&redButtonStylePR, &lv_style_plain);
-	redButtonStylePR.body.main_color = LV_COLOR_RED;
-	redButtonStylePR.body.grad_color = LV_COLOR_RED;
-	redButtonStylePR.body.radius = 10;
-	redButtonStylePR.text.color = LV_COLOR_WHITE;
-
-	lv_style_copy(&blueButtonStyleREL, &lv_style_plain);
-	blueButtonStyleREL.body.radius = 10;
-	blueButtonStyleREL.text.color = LV_COLOR_BLUE;
-
-	lv_style_copy(&blueButtonStylePR, &lv_style_plain);
-	blueButtonStylePR.body.main_color = LV_COLOR_BLUE;
-	blueButtonStylePR.body.grad_color = LV_COLOR_BLUE;
-	blueButtonStylePR.body.radius = 10;
-	blueButtonStylePR.text.color = LV_COLOR_WHITE;
-
-    redButton = lv_btn_create(lv_scr_act(), NULL);
-	lv_obj_set_free_num(redButton, 0);
-	lv_btn_set_action(redButton, LV_BTN_ACTION_CLICK, btn_click_action);
-	lv_btn_set_style(redButton, LV_BTN_STYLE_REL, &redButtonStyleREL);
-	lv_btn_set_style(redButton, LV_BTN_STYLE_PR, &redButtonStylePR);
-	lv_obj_set_size(redButton, 150, 50);
-	lv_obj_align(redButton, NULL, LV_ALIGN_IN_TOP_LEFT, 40, 40);
-
-	redButtonLabel = lv_label_create(redButton, NULL);
-	lv_label_set_text(redButtonLabel, "Red");
-	
-	
-	blueButton = lv_btn_create(lv_scr_act(), NULL);
-	lv_obj_set_free_num(blueButton, 1);
-	lv_btn_set_action(blueButton, LV_BTN_ACTION_CLICK, btn_click_action);
-	lv_btn_set_style(blueButton, LV_BTN_STYLE_REL, &blueButtonStyleREL);
-	lv_btn_set_style(blueButton, LV_BTN_STYLE_PR, &blueButtonStylePR);
-	lv_obj_set_size(blueButton, 150, 50);
-	lv_obj_align(blueButton, NULL, LV_ALIGN_IN_TOP_RIGHT, -40, 40);
-
-	blueButtonLabel = lv_label_create(blueButton, NULL);
-	lv_label_set_text(blueButtonLabel, "Blue");*/
-
 	autonLabel = lv_label_create(lv_scr_act(), NULL);
 	lv_label_set_text(autonLabel, "Select Autonomous");
 	
