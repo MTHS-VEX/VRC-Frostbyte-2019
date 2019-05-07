@@ -10,14 +10,14 @@ lv_style_t redButtonStyle;
 lv_style_t blueButtonStyle;
 lv_style_t skillsButtonStyle;
 
-static const char *autonSide[] = {"Red Side", "Blue Side", "Skills"};
+const std::string autonSide[3] = {"Red Side", "Blue Side", "Skills"};
+
 
 static lv_res_t btn_click_action(lv_obj_t *btn) {
 	uint8_t id = lv_obj_get_free_num(btn);
-	char labelMsg[100];
-	sprintf(labelMsg, "%s Selected", autonSide[id]);
+	std::string labelMsg = autonSide[id] + " Selected";
 
-	lv_label_set_text(autonLabel, labelMsg);
+	lv_label_set_text(autonLabel, labelMsg.c_str());
 	lv_obj_align(autonLabel, NULL, LV_ALIGN_IN_BOTTOM_MID, 0, -40);
 
 	side = id;
@@ -41,7 +41,7 @@ lv_obj_t *createBtn(
 	lv_btn_set_action(btn, LV_BTN_ACTION_CLICK, btn_click_action);
 
     lv_obj_t *label = lv_label_create(btn, NULL);
-    lv_label_set_text(label, autonSide[id]);
+    lv_label_set_text(label, autonSide[id].c_str());
     lv_obj_align(label, NULL, LV_ALIGN_IN_TOP_MID, 0, 5);
 
     return btn;
