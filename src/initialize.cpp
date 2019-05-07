@@ -60,9 +60,9 @@ lv_style_t *createBtnStyle(
 	lv_color_t textColorPr,
 	lv_obj_t *btn
 ) {
-    lv_style_t *btnStyle = (lv_style_t *)malloc(sizeof(lv_style_t) *4);
+    lv_style_t *btnStyle = (lv_style_t *)malloc(sizeof(lv_style_t) *2);
 
-    for(int i = 0; i < 4; i++) lv_style_copy(&btnStyle[i], copy);
+    for(int i = 0; i < 2; i++) lv_style_copy(&btnStyle[i], copy);
 
     btnStyle[0].body.main_color = rel;
     btnStyle[0].body.grad_color = rel;
