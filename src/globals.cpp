@@ -28,7 +28,8 @@ Motor dtRightBack(RIGHT_MOTOR_BACK, true, AbstractMotor::gearset::green);
 
 // Intake & shooter definitions
 Motor intake(INTAKE_MOTOR, false, AbstractMotor::gearset::green);
-Motor shooter(SHOOTER_MOTOR, false, AbstractMotor::gearset::red);
+Motor shooter(SHOOTER_MOTOR, true, AbstractMotor::gearset::red);
+Motor angle(ANGLE_MOTOR, false, AbstractMotor::gearset::green);
 
 // Drivetrain controller definition
 QLength wheelDiameter = 4.125_in;

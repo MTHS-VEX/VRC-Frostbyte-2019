@@ -5,12 +5,12 @@
  * flip the autonomous depending on if the robot is on either the blue or red
  * side, without having to manually recode it.
  */
-void autoTurn(QAngle x) {
-    if (side == 1) {
-        x = -x;
-    }
-    dt.turnAngle(x);
-}
+// void autoTurn(QAngle x) {
+//     if (side == 1) {
+//         x = -x;
+//     }
+//     dt.turnAngle(x);
+// }
 
 /**
  * Runs the user autonomous code. This function will be started in its own task
@@ -23,19 +23,37 @@ void autoTurn(QAngle x) {
  * will be stopped. Re-enabling the robot will restart the task, not re-start it
  * from where it left off.
  */
+// void autonomous() {
+//     if (side != 2) {
+//         intake.moveVoltage(12000);
+//         dt.moveDistance(45_in);
+//         pros::Task::delay(500);
+
+//         dt.moveDistance(-8_in);
+//         intake.moveVoltage(0);
+
+//         autoTurn(90_deg);
+//         dt.moveDistance(40_in);
+//     }
+//     else {
+//         // Insert skills code here
+//     }
+// }
+
 void autonomous() {
-    if (side != 2) {
-        intake.moveVoltage(12000);
-        dt.moveDistance(45_in);
-        pros::Task::delay(500);
+    dt.setMaxVelocity(100);
+    intake.moveVoltage(12000);
+    dt.moveDistance(45_in);
+    pros::Task::delay(500);
 
-        dt.moveDistance(-8_in);
-        intake.moveVoltage(0);
-
-        autoTurn(90_deg);
-        dt.moveDistance(40_in);
-    }
-    else {
-        // Insert skills code here
-    }
+    dt.moveDistance(-44_in);
+    angle.moveAbsolute(-65, 25);
+    pros::Task::delay(250);
+    shooter.moveVoltage(12000);
+    pros::Task::delay(300);
+    shooter.moveVoltage(0);
+    
+    dt.moveDistance(30_in);
+    pros::Task::delay(300);
+    dt.moveDistance(-40_in);
 }

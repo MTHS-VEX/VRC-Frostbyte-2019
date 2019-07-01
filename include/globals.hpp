@@ -6,14 +6,15 @@
 extern int side;
 
 // Chassis motor ports
-const int LEFT_MOTOR_FRONT = 1;
-const int LEFT_MOTOR_BACK = 2;
-const int RIGHT_MOTOR_FRONT = 3;
-const int RIGHT_MOTOR_BACK = 4;
+const int LEFT_MOTOR_FRONT = 17;
+const int LEFT_MOTOR_BACK = 14;
+const int RIGHT_MOTOR_FRONT = 16;
+const int RIGHT_MOTOR_BACK = 12;
 
 // Intake & shooter motor ports
-const int INTAKE_MOTOR = 5;
-const int SHOOTER_MOTOR = 6;
+const int INTAKE_MOTOR = 10;
+const int SHOOTER_MOTOR = 1;
+const int ANGLE_MOTOR = 3;
 
 // Controller declarations
 extern Controller master;
@@ -42,6 +43,7 @@ extern Motor dtRIghtBack;
 // Intake & shooter declarations
 extern Motor intake;
 extern Motor shooter;
+extern Motor angle;
 
 // Drivetrain controller declaration
 extern QLength wheelDiameter;
