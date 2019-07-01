@@ -22,7 +22,6 @@ void opcontrol() {
             master.getAnalog(ControllerAnalog::rightY)
         );
 
-        angle.setBrakeMode(AbstractMotor::brakeMode::hold);
         // Intake control
         if (ButtonL1.isPressed()) {
             intake.moveVoltage(12000);
@@ -41,7 +40,7 @@ void opcontrol() {
         else {
             shooter.moveVoltage(0);
         }
-        
+
         // Angle control
         if (ButtonR1.changedToPressed()) {
             angle.moveAbsolute(anglePos ? -65 : 0, 25);

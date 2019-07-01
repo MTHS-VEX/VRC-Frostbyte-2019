@@ -42,18 +42,15 @@
 
 void autonomous() {
     dt.setMaxVelocity(100);
-    intake.moveVoltage(12000);
-    dt.moveDistance(45_in);
-    pros::Task::delay(500);
-
-    dt.moveDistance(-44_in);
-    angle.moveAbsolute(-65, 25);
-    pros::Task::delay(250);
+    dt.moveDistance(16_in);
+    angle.moveAbsolute(0, 25);
     shooter.moveVoltage(12000);
-    pros::Task::delay(300);
+    pros::Task::delay(750);
     shooter.moveVoltage(0);
-    
-    dt.moveDistance(30_in);
-    pros::Task::delay(300);
-    dt.moveDistance(-40_in);
+    dt.moveDistance(25_in);
+    pros::Task::delay(500);
+    dt.moveDistance(-60_in);
+    dt.turnAngle(90_deg);
+    dt.moveDistance(80_in);
+
 }

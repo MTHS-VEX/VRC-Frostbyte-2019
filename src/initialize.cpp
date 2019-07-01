@@ -1,4 +1,4 @@
-// #include "globals.hpp"
+#include "globals.hpp"
 
 // lv_obj_t *redButton;
 // lv_obj_t *blueButton;
@@ -130,7 +130,7 @@
 
 // 	autonLabel = lv_label_create(lv_scr_act(), NULL);
 // 	lv_label_set_text(autonLabel, "Select Autonomous");
-	
+
 // 	lv_obj_align(autonLabel, NULL, LV_ALIGN_IN_BOTTOM_MID, 0, -40);
 // }
 
@@ -151,6 +151,8 @@
 //  * starts.
 //  */
 // void competition_initialize() {}
-void initialize() {}
+void initialize() {
+	angle.setBrakeMode(AbstractMotor::brakeMode::hold);
+}
 void disabled() {}
 void competition_initialize() {}
